@@ -8,24 +8,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class HashSetStudent {
-	@Autowired
-	Student student;
+	
 	Set<Student> studentHashSet = new HashSet<Student>();
 
 	public void add(Student student) {
-		studentHashSet.add(new Student(student.getId(), student.getName(), student.getBranch(), student.isHostelAcc(),
-				student.getState()));
+		studentHashSet.add(student);
 	}
 
 	public Student find(int id) {
+		Student retunobj =null;
 		for (Student st : studentHashSet)
 			if (st.getId() == id) {
-				student.setId(st.getId());
-				student.setName(st.getName());
-				student.setBranch(st.getBranch());
-				student.setHostelAcc(st.isHostelAcc());
-				student.setState(st.getState());
+				retunobj = st;
 			}
-		return student;
+		return retunobj;
 	}
 }

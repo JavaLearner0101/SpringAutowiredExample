@@ -6,14 +6,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MainProgram {
 
 	public static void main(String[] args) {
-	
 		
 		Student student = new Student();
 		//		HashSetStudent hss = new HashSetStudent();
 		AnnotationConfigApplicationContext context  =  new AnnotationConfigApplicationContext(SpringConfiguration.class);
 		HashSetStudent hss = context.getBean("hashSetStudent", HashSetStudent.class );
-		
-		
+			
 		student.setId(1);
 		student.setName("Rajesh");
 		student.setHostelAcc(true);
@@ -27,8 +25,8 @@ public class MainProgram {
 		student.setState("Bihar");
 		hss.add(student);
 
-		student = hss.find(2);
-		if (student.getName() == null) {
+		student = hss.find(4);
+		if (student == null) {
 			System.out.println("No student with that ID");
 		} else {
 			System.out.println(student.getName());

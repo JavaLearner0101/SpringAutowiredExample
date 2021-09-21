@@ -6,7 +6,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+
 public class HashSetStudent {
 	
 	Set<Student> studentHashSet = new HashSet<Student>();

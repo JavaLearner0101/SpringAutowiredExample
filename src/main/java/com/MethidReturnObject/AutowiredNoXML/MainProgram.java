@@ -4,14 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainProgram {
-
+	
 	public static void main(String[] args) {
 		
-		Student student = new Student();
-		//		HashSetStudent hss = new HashSetStudent();
+//		Student student = new Student();
 		AnnotationConfigApplicationContext context  =  new AnnotationConfigApplicationContext(SpringConfiguration.class);
 		HashSetStudent hss = context.getBean("hashSetStudent", HashSetStudent.class );
-			
+		Student student = 	context.getBean("student",Student.class);
 		student.setId(1);
 		student.setName("Rajesh");
 		student.setHostelAcc(true);
